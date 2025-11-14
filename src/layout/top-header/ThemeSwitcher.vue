@@ -62,16 +62,13 @@
 </template>
 
 <script setup lang="ts">
-import Aura from '@primeuix/themes/aura';
-import Lara from '@primeuix/themes/lara';
-import Nora from '@primeuix/themes/nora';
+// import Aura from '@primeuix/themes/aura';
+// import Lara from '@primeuix/themes/lara';
+// import Nora from '@primeuix/themes/nora';
 import Popover from 'primevue/popover';
-import { $t, updatePreset, updateSurfacePalette } from '@primeuix/themes';
-import SelectButton from 'primevue/selectbutton';
-import ToggleSwitch from 'primevue/toggleSwitch';
 
-import { computed, onMounted, ref } from 'vue';
-const presets = {Aura,Lara,Nora};
+import {onMounted, ref } from 'vue';
+// const presets = {Aura,Lara,Nora};
 const primaryColors = [
     { name: 'noir', palette: {} },
     {
@@ -471,7 +468,7 @@ const surfaces = [
 ];
 const selectedPrimaryColor = ref('nior')
 const selectedSurfaceColor = ref('')
-const preset = ref(Object.keys(presets)); 
+// const preset = ref(Object.keys(presets)); 
 const iconClass = ref('pi-sun');
 const op = ref();
 
@@ -504,20 +501,20 @@ const updateColors = (type: string, color: any) => {
      } 
 }
 
-const onPresetChange = (event: string) => {
-    console.log('onPresetChange', event);
-}
+// const onPresetChange = (event: string) => {
+//     console.log('onPresetChange', event);
+// }
 
-const onRippleChange = (event: boolean) => {
-    console.log('onRippleChange', event);
-}
+// const onRippleChange = (event: boolean) => {
+//     console.log('onRippleChange', event);
+// }
 
-const applyTheme = (type: string, color: any) => {
-    console.log('applyTheme');
-}
+// const applyTheme = (type: string, color: any) => {
+//     console.log('applyTheme');
+// }
 
-const rippleActive = computed(() => {
-    // return this.$primevue.config.ripple;
-})
+// const rippleActive = computed(() => {
+//     // return this.$primevue.config.ripple;
+// })
 
 </script>

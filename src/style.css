@@ -32,6 +32,69 @@ body {
   border-color: var(--p-primary-color);
 }
 
+.gradient-text {
+  background: linear-gradient(to right,#6d77ed , #974dd1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-danger-500 {
+  background-color: #f34981;
+}
+.bg-success-500 {
+  background-color: #44d486;
+}
+.bg-warning-500 {
+  background-color: #f3bb59;
+}
+
+.project-card-hover {
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-card-hover:hover {
+  transform: translateY(-8px);
+}
+
+.text-default-500 {
+  color: #9c9ca4;
+}
+
+.bg-footer {
+    background-color: #f4f4f5;
+}
+
+.my-app-dark .bg-footer-dark {
+    background-color: #27272a;
+}
+
+.bg-wrap-shadow {
+  background-color: linear-gradient(to right,#0f1a30 , #1a0e25);
+  /* -webkit-background-clip: background; */
+  /* -webkit-text-fill-color: transparent; */
+}
+
+.bg-wrap-content {
+  background-color: #ffffff;
+}
+
+.bg-content {
+  background-color: #f4f4f5;
+}
+.my-app-dark .bg-content {
+  background-color: #27272a;
+}
+
+.my-app-dark .bg-wrap-content {
+  background-color: #18181b;
+}
+
+.my-app-dark .bg-wrap-shadow {
+  background: linear-gradient(to right,#d4ddf8 , #e3cff2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .my-app-dark {
   .bg-dark {
     background-color: var(--p-primary-color);

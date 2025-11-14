@@ -6,6 +6,7 @@ import router from './router';
 import AppState from './components/plugins/appState';
 import Noir from './components/presets/Nior';
 import Tooltip from 'primevue/tooltip';
+import ToastService from 'primevue/toastservice';
 
 const app = createApp(App);
 app.use(PrimeVue, {
@@ -22,5 +23,6 @@ app.directive('tooltip', Tooltip);
 // app.use(PrimeVue);
 app.use(AppState);
 app.use(router);
+app.use(ToastService);
 app.mount('#app');
 

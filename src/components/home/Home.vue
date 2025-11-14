@@ -1,15 +1,15 @@
 <template>
-    <div class="container-fluid flex justify-between ">
-        <div class="info-text">
-            HEllo I am ponleu
+        <div class="relative overflow-hidden py-20 md:py-32 z-0 ">
+            <InfoInterest/>
+            <State/>
+            <ProjectFeature/>
+            <CallToAction/>
         </div>
-        <div class="card">
-            card
-        </div>
-       
-    </div>
 </template>
 
 <script setup lang="ts">
-
+import CallToAction from '../shares/CallToAction.vue';
+import InfoInterest from '../shares/InfoInterest.vue';
+import ProjectFeature from '../shares/ProjectFeature.vue';
+import State from '../shares/State.vue';
 </script>

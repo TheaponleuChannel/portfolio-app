@@ -7,7 +7,7 @@ import { RouterLink } from 'vue-router';
 </script>
 
 <template>
-    <div class="grid grid-cols-4 gap-4 max-w-9/10 mx-auto pt-[3rem] max-lg:w-full max-lg:grid-cols-2 max-sm:grid-cols-1 ">
+    <footer class="grid grid-cols-4 gap-4 max-w-9/10 mx-auto pt-[3rem] max-lg:w-full max-lg:grid-cols-2 max-sm:grid-cols-1 ">
         <div>
             <Branding/>
             <div class="pt-[15px]">
@@ -55,6 +55,6 @@ import { RouterLink } from 'vue-router';
                 </li>
             </div>
         </div>
-    </div>
+    </footer>
 
 </template>
