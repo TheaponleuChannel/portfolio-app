@@ -5,10 +5,10 @@ import type { Project } from '../../models/project';
 import { onMounted, ref, type Ref } from 'vue';
 import { projects } from '../../data/project';
 
-    const projectList : Ref<Project[]> = ref([]);
-    onMounted(() => {
-        projectList.value = projects
-    })
+  const projectList : Ref<Project[]> = ref([]);
+  onMounted(() => {
+      projectList.value = projects
+  })
 
 </script>
 

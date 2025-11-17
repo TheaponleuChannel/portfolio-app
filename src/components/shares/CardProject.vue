@@ -12,15 +12,15 @@ import { useToast } from "primevue/usetoast";
 </script>
 
 <template>
-    <Card style="width: 25rem; overflow: hidden">
+    <Card style="overflow: hidden">
     <template #header>
         <img alt="user header" :src="project.image" />
     </template>
-    <template #title>{{ project.title }}</template>
-    <template #subtitle>{{ project.category }}</template>
+    <template #title>{{ project.title || '' }}</template>
+    <template #subtitle>{{ project.category || '' }}</template>
     <template #content>
         <p class="m-0">
-            {{ project.longDescription }}
+            {{ project.longDescription || '' }}
         </p>
     </template>
     <template #footer>
