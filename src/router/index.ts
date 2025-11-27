@@ -7,6 +7,8 @@ import Contact from '../components/contact/Contact.vue'
 import NotFound from '../components/not-found/NotFound.vue'
 
 const routes = [
+  {path: '/', component: Home},
+  {path: '/theaponleuchannel.github.io', name: 'Home', component: Home},
   { path: '/home', component: Home },
   { path: '/about', component: About },
   { path: '/project', component: Project },
