@@ -4,9 +4,9 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/theaponleuchannel.github.io/port-folio-app/',
   plugins: [
     vue(),
     tailwindcss(),
   ],
+  base: '/portfolio-app/',
 })
