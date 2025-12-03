@@ -52,7 +52,7 @@ const showMenu = (event: Event) => {
     </div>
     <div class="scroll-container overflow-y-auto flex flex-col min-h-[95vh] ">
         <div class="flex-1 min-h-auto">
-            <router-view></router-view>
+            <router-view/>
         </div>
         <div class="bg-footer bg-footer-dark inset-shadow-2xs">
             <Footer/>
