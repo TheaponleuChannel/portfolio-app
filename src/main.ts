@@ -1,16 +1,12 @@
 import { createApp } from 'vue'
-import './style.css'
 import App from './App.vue'
 import PrimeVue from 'primevue/config';
 import router from './router';
-import AppState from './components/plugins/appState';
-import Noir from './components/presets/Nior';
+import AppState from './composables/plugins/appState';
+import Noir from './composables/presets/Nior';
 import Tooltip from 'primevue/tooltip';
 import ToastService from 'primevue/toastservice';
-import 'leaflet/dist/leaflet.css';
-import 'vue-map-ui/dist/normalize.css';
-import 'vue-map-ui/dist/style.css';
-import 'vue-map-ui/dist/theme-all.css';
+import './style.css'
 
 const app = createApp(App);
 app.use(PrimeVue, {
@@ -29,4 +25,3 @@ app.use(AppState);
 app.use(router);
 app.use(ToastService);
 app.mount('#app');
-

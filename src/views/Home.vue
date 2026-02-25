@@ -8,8 +8,8 @@
 </template>
 
 <script setup lang="ts">
-import CallToAction from '../shares/CallToAction.vue';
-import InfoInterest from '../shares/InfoInterest.vue';
-import ProjectFeature from '../shares/ProjectFeature.vue';
-import State from '../shares/State.vue';
+import CallToAction from '../components/CallToAction.vue';
+import InfoInterest from '../components/InfoInterest.vue';
+import ProjectFeature from '../components/ProjectFeature.vue';
+import State from '../components/State.vue';
 </script>

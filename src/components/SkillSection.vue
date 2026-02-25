@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import Card from 'primevue/card';
 import { onMounted, ref, type Ref } from 'vue';
-import type { Skill } from '../../models/skill';
-import { backendSkills, frontendSkills } from '../../data/project';
+import type { Skill } from '../models/skill';
+import { backendSkills, frontendSkills } from '../data/usePortfolio';
 import ProgressBar from 'primevue/progressbar';
 
     const fSkills : Ref<Skill[]> = ref([]);

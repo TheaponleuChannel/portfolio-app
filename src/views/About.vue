@@ -10,10 +10,10 @@
             <div class="img-section" >
                 <ImageCompare class="shadow-lg rounded-2xl aspect-1">
                     <template #left>
-                        <img src="../../assets/photo/pf-black.png" class="w-full h-full object-cover aspect-square" />
+                        <img src="../assets/photo/pf-black.png" class="w-full h-full object-cover aspect-square" />
                     </template>
                     <template #right>
-                        <img src="../../assets/photo/pf.jpg" class="w-full h-full object-cover aspect-square" />
+                        <img src="../assets/photo/pf.jpg" class="w-full h-full object-cover aspect-square" />
                     </template>
                 </ImageCompare>
             </div>
@@ -89,14 +89,14 @@
 <script setup lang="ts">
     import Button from 'primevue/button';
     import ImageCompare from 'primevue/imagecompare';
-    import SkillSection from '../shares/SkillSection.vue';
-    import ExperienceTimeLine from '../shares/ExperienceTimeLine.vue';
+    import SkillSection from '../components/SkillSection.vue';
+    import ExperienceTimeLine from '../components/ExperienceTimeLine.vue';
 
     const onDownload = () => {
-        // const link = document.createElement('a');
-        // link.href = '/CV_Ponleu.pdf';
-        // link.download = 'CV_Ponleu.pdf';
-        // link.click();
+        const link = document.createElement('a');
+        link.href = '/CV_Ponleu.pdf';
+        link.download = 'CV_Ponleu.pdf';
+        link.click();
     }
 
 </script>

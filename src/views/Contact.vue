@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import ContactForm from '../shares/ContactForm.vue';
-import InformationCard from '../shares/InformationCard.vue';
-import Location from '../shares/Location.vue';
+import ContactForm from '../components/ContactForm.vue';
+import InformationCard from '../components/InformationCard.vue';
+import Location from '../components/Location.vue';
 
 </script>
 

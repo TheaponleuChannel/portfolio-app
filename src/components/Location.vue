@@ -30,3 +30,5 @@ const onViewChanged = (view: { center: LatLng; zoom: number; bounds: LatLngBound
     </VMapLayersControl>
   </VMap>
 </template>
+<style scoped>
+</style>

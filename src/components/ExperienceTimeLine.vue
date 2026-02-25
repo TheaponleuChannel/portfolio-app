@@ -2,8 +2,8 @@
 import Timeline from 'primevue/timeline';
 import Card from 'primevue/card';
 import { onMounted, ref, type Ref } from "vue";
-import type { ExperienceTimeLine } from '../../models/experience-time-line';
-import { experienceTimeLine } from '../../data/project';
+import type { ExperienceTimeLine } from '../models/experience-time-line';
+import { experienceTimeLine } from '../data/usePortfolio';
 import Button from 'primevue/button';
 import Divider from 'primevue/divider';
 

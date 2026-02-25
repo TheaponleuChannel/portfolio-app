@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Project } from '../../models/project';
+import type { Project } from '../models/project';
 import Card from 'primevue/card';
 import Button from 'primevue/button';
 import Toast from 'primevue/toast';

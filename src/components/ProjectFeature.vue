@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import Button from 'primevue/button';
 import CardProject from './CardProject.vue';
-import type { Project } from '../../models/project';
+import type { Project } from '../models/project';
 import { onMounted, ref, type Ref } from 'vue';
-import { projects } from '../../data/project';
+import { projects } from '../data/usePortfolio';
 
   const projectList : Ref<Project[]> = ref([]);
   onMounted(() => {

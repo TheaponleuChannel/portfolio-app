@@ -34,9 +34,9 @@ import IconField from 'primevue/iconfield';
 import InputIcon from 'primevue/inputicon';
 import InputText from 'primevue/inputtext';
 import { onBeforeMount, ref, type Ref } from 'vue';
-import CardProject from '../shares/CardProject.vue';
-import { projects } from '../../data/project';
-import type { Project } from '../../models/project';
+import CardProject from '../components/CardProject.vue';
+import { projects } from '../data/usePortfolio';
+import type { Project } from '../models/project';
 
   const searchText = ref('');
   const projectFiltered : Ref<Project[]> = ref([]);

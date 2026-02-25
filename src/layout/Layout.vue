@@ -35,7 +35,7 @@ const showMenu = (event: Event) => {
 </script>
 
 <template>
-    <div class="sticky top-0 left-0 right-0 h-16 border-b-1 border-[#dddddfa9] z-10 ">
+    <div class="sticky top-0 left-0 right-0 h-16 border-b-1 border-[#dddddfa9] z-10 bg-header ">
         <div class="max-w-[1280px] mx-auto py-4 flex justify-between items-center max-xl:px-[1rem] ">
             <div class="flex gap-4 items-center">
                 <div class="hidden max-sm:block">
@@ -69,5 +69,11 @@ const showMenu = (event: Event) => {
 </template>
 
 <style>
+.bg-header {
+    background-color: #ffffff;
+}
 
+.my-app-dark .bg-header {
+    background-color: #121212;
+}
 </style>

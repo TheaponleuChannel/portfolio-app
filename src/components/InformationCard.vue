@@ -24,8 +24,8 @@
 </template>
 <script setup lang="ts">
 import { onMounted, ref, type Ref } from 'vue';
-import type { ContactInfo } from '../../models/contact-information';
-import { contactInfo } from '../../data/project';
+import type { ContactInfo } from '../models/contact-information';
+import { contactInfo } from '../data/usePortfolio';
     const contactInformation : Ref<ContactInfo[]> = ref([]);
     onMounted(() => {
         contactInformation.value = contactInfo

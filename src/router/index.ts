@@ -1,10 +1,10 @@
 
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
-import Home from '../components/home/Home.vue'
-import About from '../components/about/About.vue'
-import Project from '../components/project/Project.vue'
-import Contact from '../components/contact/Contact.vue'
-import NotFound from '../components/not-found/NotFound.vue'
+import Home from '../views/Home.vue'
+import About from '../views/About.vue'
+import Project from '../views/Project.vue'
+import Contact from '../views/Contact.vue'
+import NotFound from '../views/NotFound.vue'
 
 const routes : RouteRecordRaw[] = [
   {path: '/', redirect: '/home'},
