@@ -2,20 +2,23 @@
     <div class="flex gap-4">
         <ul class="flex list-none m-0 p-0 gap-2 items-center">
             <li>
-                <button type="button" v-tooltip.bottom="'Toggle Dark/Light Mode'"
-                    class="inline-flex w-6 h-6 p-0 items-center justify-center surface-0 border border-primary-color rounded cursor-pointer"
-                    @click="onThemeToggler">
-                    <i :class="`primary-color  pi ${iconClass}`" />
-                </button>
+                <div v-tooltip.bottom="'Toggle Dark/Light Mode'">
+                    <input type="checkbox" class="checkbox" id="checkbox" v-model="isDark" :checked="isDark" @change="onThemeToggler">
+                    <label for="checkbox" class="checkbox-label" >
+                        <i class="pi pi-moon"/>
+                        <i class="pi pi-sun"/>
+                        <span class="ball"></span>
+                    </label>
+                </div>
             </li>
             <li >
-                <button type="button" @click="showConfig" v-tooltip.bottom="'Theme Configuration'"
+                <!-- <button type="button" @click="showConfig" v-tooltip.bottom="'Theme Configuration'"
                     class="inline-flex w-6 h-6 p-0 items-center justify-center border border-primary-color rounded cursor-pointer">
                     <i class="pi pi-palette primary-color" ></i>
-                </button> 
+                </button>  -->
 
-                <Popover ref="op">
-                    <div class="configuration">
+                <Popover position="top" ref="op" style="width: 300px;">
+                    <div class="flex flex-col justify-start items-start gap-4">
                         <div class="flex-col justify-start items-start gap-2 inline-flex pr-4">
                         <span class="text-sm font-medium">Primary Colors</span>
                         <div class="self-stretch justify-start items-start gap-2 inline-flex flex-wrap">
@@ -27,7 +30,7 @@
                                     outlineColor: `${selectedPrimaryColor === primaryColor.name ? 'var(--p-primary-color)' : ''}`,
                                 }">
                             </button>
-                        </div>ff
+                        </div>
                     </div>
                     <div class="flex-col justify-start items-start gap-2 inline-flex pr-2">
                         <span class="text-sm font-medium">Surface Colors</span>
@@ -49,10 +52,10 @@
                                 :options="preset" :unselectable="false" />
                         </div> -->
                     </div>
-                    <div class="inline-flex flex-col justify-start items-start gap-2 w-full pt-4 pb-2">
+                    <!-- <div class="inline-flex flex-col justify-start items-start gap-2 w-full pt-4 pb-2">
                         <span class="text-sm font-medium m-0">Ripple Effect</span>
-                        <!-- <ToggleSwitch :modelValue="rippleActive" @update:modelValue="onRippleChange" /> -->
-                    </div>
+                        <ToggleSwitch :modelValue="rippleActive" @update:modelValue="onRippleChange" />
+                    </div> -->
                     </div>
                 </Popover>
             
@@ -62,13 +65,14 @@
 </template>
 
 <script setup lang="ts">
-// import Aura from '@primeuix/themes/aura';
-// import Lara from '@primeuix/themes/lara';
-// import Nora from '@primeuix/themes/nora';
+import Aura from '@primeuix/themes/aura';
+import Lara from '@primeuix/themes/lara';
+import Nora from '@primeuix/themes/nora';
 import Popover from 'primevue/popover';
 
-import {onMounted, ref } from 'vue';
-// const presets = {Aura,Lara,Nora};
+
+import {computed, onMounted, ref } from 'vue';
+const presets = {Aura,Lara,Nora};
 const primaryColors = [
     { name: 'noir', palette: {} },
     {
@@ -468,24 +472,24 @@ const surfaces = [
 ];
 const selectedPrimaryColor = ref('nior')
 const selectedSurfaceColor = ref('')
-// const preset = ref(Object.keys(presets)); 
-const iconClass = ref('pi-sun');
+const preset = ref(Object.keys(presets)); 
+const isDark = ref(false);
 const op = ref();
 
 onMounted(() => {
     const isDarkMode = localStorage.getItem('isDarkMode');
-    if (isDarkMode === 'true') {
-        localStorage.setItem('isDarkMode', 'true');
+    isDark.value = isDarkMode === 'true';
+    if (isDark.value) {
         document.documentElement.classList.add('my-app-dark');
     } else {
-        localStorage.setItem('isDarkMode', 'false');
+        document.documentElement.classList.remove('my-app-dark');
     }
 })
 
 const onThemeToggler = () => {
-    localStorage.setItem('isDarkMode', localStorage.getItem('isDarkMode') === 'true' ? 'false' : 'true');
-    document.documentElement.classList.toggle('my-app-dark');
-    iconClass.value = iconClass.value === 'pi-moon' ? 'pi-sun' : 'pi-moon';
+    const isDarkMode = isDark.value;
+    localStorage.setItem('isDarkMode', isDarkMode ? 'true' : 'false');
+    document.documentElement.classList.toggle('my-app-dark', isDarkMode);
 }
 
 const showConfig = (event: Event) => {
@@ -501,20 +505,60 @@ const updateColors = (type: string, color: any) => {
      } 
 }
 
-// const onPresetChange = (event: string) => {
-//     console.log('onPresetChange', event);
-// }
+const onPresetChange = (event: string) => {
+    console.log('onPresetChange', event);
+}
 
-// const onRippleChange = (event: boolean) => {
-//     console.log('onRippleChange', event);
-// }
+const onRippleChange = (event: boolean) => {
+    console.log('onRippleChange', event);
+}
 
-// const applyTheme = (type: string, color: any) => {
-//     console.log('applyTheme');
-// }
+const applyTheme = (type: string, color: any) => {
+    console.log('applyTheme');
+}
 
-// const rippleActive = computed(() => {
-//     // return this.$primevue.config.ripple;
-// })
+const rippleActive = computed(() => {
+    // return this.$primevue.config.ripple;
+})
 
 </script>
+
+<style scoped>
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  background-color: #cbd5e1;
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.my-app-dark .checkbox-label{
+    background-color: #0505fd;
+}
+
+.checkbox-label .ball {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
+}
+
+</style>

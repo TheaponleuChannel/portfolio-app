@@ -6,11 +6,11 @@
     <div class="container mx-auto px-4">
         <div class="flex flex-col md:flex-row items-center justify-between gap-12">
             <div class="flex-1 text-center md:text-left">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 w-fit mx-auto md:mx-0 overflow-hidden whitespace-nowrap border-r-gray-500 pr-1 animate-[typing_5s_steps(75)_infinite,blink_5s_infinite]">
                     <span>Hi, I'm </span>
                     <span class="gradient-text">Ponleu</span>
                 </h1>
-                <h2 class="text-2xl md:text-3xl font-medium text-default-600 mb-6">
+                <h2 class="text-2xl md:text-3xl font-medium text-default-600 mb-6 w-fit mx-auto md:mx-0 overflow-hidden whitespace-nowrap border-r-gray-500 pr-1 animate-[typing_5s_steps(50)_infinite,blink_5s_infinite] ">
                     Frontend Web Developer
                 </h2>
                 <p class="text-default-500 text-lg mb-8 max-w-lg mx-auto md:mx-0">
@@ -75,4 +75,13 @@
 </template>
 
 <style>
+@keyframes typing {
+  from { width: 0; }
+  40% { width: 60%; }
+  100% { width:60%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
 </style>
