@@ -94,8 +94,8 @@
 
     const onDownload = () => {
         const link = document.createElement('a');
-        link.href = '/CV_Ponleu.pdf';
-        link.download = 'CV_Ponleu.pdf';
+        link.href = '/public/doc/THEA PONLEU Web Developer.pdf';
+        link.download = '/public/doc/THEA PONLEU Web Developer.pdf';
         link.click();
     }
 
