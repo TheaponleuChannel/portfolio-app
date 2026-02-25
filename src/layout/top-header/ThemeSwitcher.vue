@@ -65,14 +65,14 @@
 </template>
 
 <script setup lang="ts">
-import Aura from '@primeuix/themes/aura';
-import Lara from '@primeuix/themes/lara';
-import Nora from '@primeuix/themes/nora';
+// import Aura from '@primeuix/themes/aura';
+// import Lara from '@primeuix/themes/lara';
+// import Nora from '@primeuix/themes/nora';
 import Popover from 'primevue/popover';
 
 
-import {computed, onMounted, ref } from 'vue';
-const presets = {Aura,Lara,Nora};
+import { onMounted, ref } from 'vue';
+// const presets = {Aura,Lara,Nora};
 const primaryColors = [
     { name: 'noir', palette: {} },
     {
@@ -472,9 +472,9 @@ const surfaces = [
 ];
 const selectedPrimaryColor = ref('nior')
 const selectedSurfaceColor = ref('')
-const preset = ref(Object.keys(presets)); 
+// const preset = ref(Object.keys(presets)); 
 const isDark = ref(false);
-const op = ref();
+// const op = ref();
 
 onMounted(() => {
     const isDarkMode = localStorage.getItem('isDarkMode');
@@ -492,10 +492,10 @@ const onThemeToggler = () => {
     document.documentElement.classList.toggle('my-app-dark', isDarkMode);
 }
 
-const showConfig = (event: Event) => {
-    console.log('showConfig', event);
-    op.value.toggle(event);
-}
+// const showConfig = (event: Event) => {
+//     console.log('showConfig', event);
+//     op.value.toggle(event);
+// }
 
 const updateColors = (type: string, color: any) => {
      if (type === 'primary'){
@@ -505,21 +505,21 @@ const updateColors = (type: string, color: any) => {
      } 
 }
 
-const onPresetChange = (event: string) => {
-    console.log('onPresetChange', event);
-}
+// const onPresetChange = (event: string) => {
+//     console.log('onPresetChange', event);
+// }
 
-const onRippleChange = (event: boolean) => {
-    console.log('onRippleChange', event);
-}
+// const onRippleChange = (event: boolean) => {
+//     console.log('onRippleChange', event);
+// }
 
-const applyTheme = (type: string, color: any) => {
-    console.log('applyTheme');
-}
+// const applyTheme = (type: string, color: any) => {
+//     console.log('applyTheme');
+// }
 
-const rippleActive = computed(() => {
-    // return this.$primevue.config.ripple;
-})
+// const rippleActive = computed(() => {
+//     // return this.$primevue.config.ripple;
+// })
 
 </script>
 
