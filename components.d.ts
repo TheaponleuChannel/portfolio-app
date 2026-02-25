@@ -15,6 +15,7 @@ declare module 'vue' {
     CallToAction: typeof import('./src/components/shares/CallToAction.vue')['default']
     CardProject: typeof import('./src/components/shares/CardProject.vue')['default']
     Contact: typeof import('./src/components/contact/Contact.vue')['default']
+    ContactForm: typeof import('./src/components/shares/ContactForm.vue')['default']
     ExperienceTimeLine: typeof import('./src/components/shares/ExperienceTimeLine.vue')['default']
     Home: typeof import('./src/components/home/Home.vue')['default']
     InfoInterest: typeof import('./src/components/shares/InfoInterest.vue')['default']

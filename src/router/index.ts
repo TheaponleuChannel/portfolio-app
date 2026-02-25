@@ -7,7 +7,7 @@ import Contact from '../components/contact/Contact.vue'
 import NotFound from '../components/not-found/NotFound.vue'
 
 const routes : RouteRecordRaw[] = [
-  {path: '/', name: 'Home', component: Home},
+  {path: '/', redirect: '/home'},
   {path: '/home', name: 'Home', component: Home},
   { path: '/about', name: 'About', component: About },
   { path: '/project', name: 'Project', component: Project },

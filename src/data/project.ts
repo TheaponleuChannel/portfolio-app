@@ -1,3 +1,4 @@
+import type { ContactInfo } from "../models/contact-information";
 import type { ExperienceTimeLine } from "../models/experience-time-line";
 import type { Project } from "../models/project";
 import type { Skill } from "../models/skill";
@@ -65,3 +66,39 @@ export const experienceTimeLine: ExperienceTimeLine[] = [
     backgroundColor: '#ef3764'
   },
 ]
+
+export const contactInfo: ContactInfo[] = [
+    {
+      icon: 'pi-inbox',
+      title: 'Email',
+      value: 'ponleu.thea@gmail.com',
+      link: 'https://ponleu.thea@gmail.com',
+      color: '#338ef7',
+      bgColor: '#002e62'
+    },
+    {
+      icon: 'pi-phone',
+      title: 'Phone',
+      value: '+855 96 279 122',
+      link: 'tel:+85962796122',
+      color: '#45d483',
+      bgColor: '#095028'
+    },
+    {
+      icon: 'pi-map-marker',
+      title: 'Location',
+      value: 'Phnom Penh, Cambodia',
+      link: 'https://maps.google.com/?q=Phnom+Penh+Cambodia',
+      color: '#9353d3',
+      bgColor: '#301050'
+    },
+    {
+      icon: 'pi-linkedin',
+      title: 'LinkedIn',
+      value: 'linkedin.com/in/ponleu',
+      link: 'https://www.linkedin.com/in/thea-ponleu-331a5a287/',
+      color: '#338ef7',
+      bgColor: '#002e62'
+    
+    }
+  ];
