@@ -1,5 +1,6 @@
 <script setup lang="ts">
     import Button from 'primevue/button';
+    import { RouterLink } from 'vue-router';
 </script>
 
 <template>
@@ -20,7 +21,9 @@
                 </p>
                 <div class="flex flex-wrap gap-4 justify-center md:justify-start">
                     <Button label="View Projects" size="large" severity="primary" icon="pi pi-arrow-right" icon-pos="right" />
-                    <Button label="Contact Me" size="large" severity="primary" variant="outlined" />
+                        <RouterLink to="/contact">
+                            <Button label="Contact Me" size="large" severity="primary" variant="outlined"/>
+                        </RouterLink>
                 </div>
             </div>
             <div class="flex-1 card-board">
