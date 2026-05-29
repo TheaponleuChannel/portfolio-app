@@ -1,22 +1,32 @@
 <template>
     <section class="container mx-auto py-16">
-        <div class="text-center mb-16">
+        <div class="text-center mb-16 animate-fade-in-up">
             <h1 class="text-4xl md:text-5xl font-bold mb-4" >My Projects</h1>
             <h6 class="text-gray-500 max-w-2xl mx-auto">
                 Explore my portfolio of web development projects across various projects.
             </h6>
         </div>
         
-        <div class="flex flex-col md:flex-row gap-4 mb-8">
+        <div 
+          v-scroll-reveal="{ enterClass: 'animate-fade-in-up' }" 
+          class="flex flex-col md:flex-row gap-4 mb-8 scroll-hidden"
+        >
             <IconField >
                 <InputIcon class="pi pi-search" />
-                <InputText v-model="searchText" placeholder="Search" size="large" :change="onChange()"/>
+                <InputText v-model="searchText" placeholder="Search" size="large" @input="onChange()"/>
             </IconField>
         </div>
+
         <div v-if="projectFiltered.length">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div v-for="project in projectFiltered" :key="project.id">
-                    <CardProject :project="project"/>
+                <div 
+                  v-for="(project, index) in projectFiltered" 
+                  :key="project.id"
+                  v-scroll-reveal="{ enterClass: 'animate-fade-in-up' }"
+                  class="scroll-hidden"
+                  :class="`anim-delay-${Math.min((index + 1) * 100, 800)}`"
+                >
+                    <CardProject :project="project" class="project-card-hover"/>
                 </div>
             </div>
         </div>
@@ -44,10 +54,11 @@ import type { Project } from '../models/project';
 
   onBeforeMount(() => {
       projectList.value = projects
+      projectFiltered.value = projects
   })
   const onChange = () => {
     setTimeout(() => {
         projectFiltered.value = projectList.value.filter((project) => project.title.toLowerCase().includes(searchText.value.toLowerCase()))
     }, 200);
   }
-</script>
+</script>

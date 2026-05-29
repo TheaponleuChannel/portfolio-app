@@ -7,6 +7,8 @@ import Noir from './composables/presets/Nior';
 import Tooltip from 'primevue/tooltip';
 import ToastService from 'primevue/toastservice';
 import './style.css'
+import AnimateOnScroll from 'primevue/animateonscroll';
+import scrollReveal from './directives/scrollReveal';
 
 const app = createApp(App);
 app.use(PrimeVue, {
@@ -19,6 +21,8 @@ app.use(PrimeVue, {
         }
     }
 });
+app.directive('animateonscroll', AnimateOnScroll);
+app.directive('scroll-reveal', scrollReveal);
 app.directive('tooltip', Tooltip);
 // app.use(PrimeVue);
 app.use(AppState);

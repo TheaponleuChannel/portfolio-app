@@ -1,13 +1,16 @@
 <template>
     <section class="container mx-auto py-16">
-        <div class="text-center mb-16">
+        <div class="text-center mb-16 animate-fade-in-up">
             <h1 class="text-4xl md:text-5xl font-bold mb-4" >About Me</h1>
             <h6 class="text-gray-500 max-w-2xl mx-auto">
                 Learn more about my background, skills, and experience as a web developer.
             </h6>
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20  max-sm:mx-5">
-            <div class="img-section" >
+            <div 
+              v-scroll-reveal="{ enterClass: 'animate-fade-in-left' }" 
+              class="img-section scroll-hidden-left"
+            >
                 <ImageCompare class="shadow-lg rounded-2xl aspect-1">
                     <template #left>
                         <img src="../assets/photo/pf-black.png" class="w-full h-full object-cover aspect-square" />
@@ -18,7 +21,10 @@
                 </ImageCompare>
             </div>
 
-            <div class="flex flex-col justify-center" >
+            <div 
+              v-scroll-reveal="{ enterClass: 'animate-fade-in-right' }" 
+              class="flex flex-col justify-center scroll-hidden-right"
+            >
                 <h2 class="text-3xl font-bold mb-6">
                     Hi, I'm <span class="gradient-text">Ponleu</span>
                  </h2>
@@ -70,8 +76,16 @@
             </div>
         </div>
 
-        <SkillSection />
-        <div class="py-20">
+        <div 
+          v-scroll-reveal="{ enterClass: 'animate-fade-in-up' }" 
+          class="scroll-hidden"
+        >
+            <SkillSection />
+        </div>
+        <div 
+          v-scroll-reveal="{ enterClass: 'animate-fade-in-up' }" 
+          class="py-20 scroll-hidden"
+        >
             <div class="text-center mb-16">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">
                 My Experience
@@ -80,8 +94,8 @@
                 A timeline of my professional journey and career highlights.
             </p>
             </div>
-        <ExperienceTimeLine />
-      </div>
+            <ExperienceTimeLine />
+        </div>
 
     </section>
 </template>

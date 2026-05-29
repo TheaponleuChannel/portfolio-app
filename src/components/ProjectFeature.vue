@@ -15,7 +15,10 @@ import { projects } from '../data/usePortfolio';
 <template >
     <section class="py-20">
       <div class="container mx-auto px-4">
-        <div class="flex flex-col md:flex-row justify-between items-center mb-12">
+        <div 
+          v-scroll-reveal="{ enterClass: 'animate-fade-in-up' }" 
+          class="flex flex-col md:flex-row justify-between items-center mb-12 scroll-hidden"
+        >
           <div>
             <h2 class="text-3xl md:text-4xl font-bold mb-2">Featured Projects</h2>
             <p class="text-default-500">
@@ -29,8 +32,11 @@ import { projects } from '../data/usePortfolio';
           </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div v-for="project in projects">
+        <div 
+          v-scroll-reveal="{ enterClass: 'animate-fade-in-up' }" 
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 scroll-hidden anim-delay-200"
+        >
+          <div v-for="project in projects" :key="project.id">
             <CardProject :project="project" />
           </div>
         </div>

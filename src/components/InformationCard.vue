@@ -1,6 +1,11 @@
 <template>
      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-          <div v-for="info in contactInformation" >
+          <div 
+            v-for="(info, index) in contactInformation" 
+            v-scroll-reveal="{ enterClass: 'animate-fade-in-up' }"
+            class="scroll-hidden"
+            :class="`anim-delay-${(index + 1) * 100}`"
+          >
             <div class="h-full rounded-2xl bg-[#f4f4f4] bg-card">
               <div class="flex flex-col items-center text-center p-6">
                 <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4 " :style="{background: info.bgColor + '6D'}">

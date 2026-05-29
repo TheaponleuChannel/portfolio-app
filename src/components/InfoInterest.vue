@@ -6,7 +6,7 @@
 <template>
     <div class="container mx-auto px-4">
         <div class="flex flex-col md:flex-row items-center justify-between gap-12">
-            <div class="flex-1 text-center md:text-left">
+            <div class="flex-1 text-center md:text-left animate-fade-in-left">
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 w-fit mx-auto md:mx-0 overflow-hidden whitespace-nowrap border-r-gray-500 pr-1 animate-[typing_5s_steps(75)_infinite,blink_5s_infinite]">
                     <span>Hi, I'm </span>
                     <span class="gradient-text">Ponleu</span>
@@ -26,7 +26,7 @@
                         </RouterLink>
                 </div>
             </div>
-            <div class="flex-1 card-board">
+            <div class="flex-1 card-board animate-fade-in-right">
                 <div class="relative">
                     <div class="absolute inset-0 bg-gradient-to-r from-blue-400 via-slate-700 to-gray-800 rounded-3xl rotate-3 scale-105" />
                     <div class="relative bg-wrap-content p-6 rounded-3xl shadow-lg">

@@ -28,6 +28,8 @@ const items: Ref<MenuItem[]> = ref([
     },
 ])
 
+const year = new Date().getFullYear();
+
 const showMenu = (event: Event) => {
     menu.value.toggle(event);
 }
@@ -52,7 +54,11 @@ const showMenu = (event: Event) => {
     </div>
     <div class="scroll-container overflow-y-auto flex flex-col min-h-[95vh] ">
         <div class="flex-1 min-h-auto">
-            <router-view/>
+            <router-view v-slot="{ Component }">
+                <transition name="route-fade" mode="out-in">
+                    <component :is="Component" />
+                </transition>
+            </router-view>
         </div>
         <div class="bg-footer bg-footer-dark inset-shadow-2xs">
             <Footer/>
@@ -61,7 +67,7 @@ const showMenu = (event: Event) => {
     
             <div class="copy-right py-[2.5rem]">
                 <p class="text-center text-[#9c9ca4]">
-                    © 2025 PONLEU. All rights reserved.
+                    © {{year}} THEA PONLEU. All rights reserved.
                 </p>
             </div>
         </div>

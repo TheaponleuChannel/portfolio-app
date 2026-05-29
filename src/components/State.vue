@@ -47,7 +47,13 @@ interface Stat {
     <section class="py-16 bg-content2 mt-[4rem]" >
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div v-for="(stat, index) in stats" :key="index">
+            <div 
+              v-for="(stat, index) in stats" 
+              :key="index"
+              v-scroll-reveal="{ enterClass: 'animate-scale-up' }"
+              class="scroll-hidden-scale"
+              :class="`anim-delay-${(index + 1) * 100}`"
+            >
               <div class="h-full bg-state-item rounded-2xl" disableRipple >
                 <div class="flex flex-col items-center justify-center p-6 text-center">
                   <div :class="`w-12 h-12 rounded-full bg-${stat.color} flex items-center justify-center mb-4`">

@@ -11,7 +11,10 @@
       </div>
       
       <div class="container mx-auto px-4">
-        <div class="max-w-3xl mx-auto text-center">
+        <div 
+          v-scroll-reveal="{ enterClass: 'animate-zoom-in' }" 
+          class="max-w-3xl mx-auto text-center scroll-hidden-zoom"
+        >
           <h2 class="text-3xl md:text-4xl font-bold mb-6">
             Ready to bring your project to life?
           </h2>
