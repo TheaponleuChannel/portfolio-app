@@ -80,8 +80,8 @@
 <style>
 @keyframes typing {
   from { width: 0; }
-  40% { width: 60%; }
-  100% { width:60%; }
+  40% { width: 100%; }
+  100% { width: 100%; }
 }
 
 @keyframes blink {
