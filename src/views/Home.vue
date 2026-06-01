@@ -1,5 +1,5 @@
 <template>
-        <div class="relative py-20 md:py-32">
+        <div class="relative py-10 ">
             <div
               v-scroll-reveal="{ enterClass: 'animate-fade-in-up' }"
               class="scroll-hidden"

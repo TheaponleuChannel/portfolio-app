@@ -15,7 +15,6 @@ This project is part of my journey as a developer and highlights my ability to b
 
 - ⚡ Framework:  Vue
 - 🎨 UI Library: PrimeVue / Tailwind CSS
-- 📦 State Management: RxJS / Signals
 - 🌐 API: REST API
 - 🧰 Tools: Node.js, npm, Git
 
@@ -41,4 +40,4 @@ npm i
 npm run dev
 ```
 
-## Then open local host on your specofic project
+## Then open local host on your specific project

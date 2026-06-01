@@ -51,7 +51,7 @@ onMounted(() => {
 
 <style scoped>
     @media screen and (max-width: 960px) {
-        ::v-deep(.customized-timeline) {
+        :deep(.customized-timeline) {
             .p-timeline-event:nth-child(even) {
                 flex-direction: row;
 
@@ -67,7 +67,7 @@ onMounted(() => {
 
     }
 
-    ::v-deep.p-timeline-vertical.p-timeline-alternate .p-timeline-event:nth-child(even) .p-timeline-event-content {
+    :deep.p-timeline-vertical.p-timeline-alternate .p-timeline-event:nth-child(even) .p-timeline-event-content {
         text-align: left !important;
     }
 

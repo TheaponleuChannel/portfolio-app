@@ -37,8 +37,8 @@ const showMenu = (event: Event) => {
 </script>
 
 <template>
-    <div class="sticky top-0 left-0 right-0 h-16 border-b-1 border-[#dddddfa9] z-10 bg-header ">
-        <div class="max-w-[1280px] mx-auto py-4 flex justify-between items-center max-xl:px-[1rem] ">
+    <div class="sticky mx-auto w-full lg:container top-5 z-10 m-5 h-16 rounded-[16px] border border-[#0000001f] bg-header transition-all duration-300 ease-in-out">
+        <div class=" h-full mx-auto px-4 flex justify-between items-center">
             <div class="flex gap-4 items-center">
                 <div class="hidden max-sm:block">
                     <Button icon="pi pi-bars" severity="contrast" variant="text" rounded @click="showMenu"/>
@@ -80,6 +80,6 @@ const showMenu = (event: Event) => {
 }
 
 .my-app-dark .bg-header {
-    background-color: #121212;
+    background-color: #27272a;
 }
 </style>

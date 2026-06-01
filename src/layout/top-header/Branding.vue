@@ -2,7 +2,7 @@
     <RouterLink to="/home">
         <div class="flex gap-1 items-center cursor-pointer">
             <Avatar :image="pfImg" alt="Avatar" class="mr-2" size="normal" shape="circle" />
-            <p class="font-bold text-md surface-0 dark:surface-800">PONLEU</p>
+            <p class="font-bold text-md surface-0 dark:surface-800 hidden md:block">PONLEU</p>
         </div>
     </RouterLink>
 </template>
