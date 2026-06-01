@@ -20,10 +20,12 @@
                     interactive user interfaces.
                 </p>
                 <div class="flex flex-wrap gap-4 justify-center md:justify-start">
-                    <Button label="View Projects" size="large" severity="primary" icon="pi pi-arrow-right" icon-pos="right" />
-                        <RouterLink to="/contact">
-                            <Button label="Contact Me" size="large" severity="primary" variant="outlined"/>
-                        </RouterLink>
+                    <RouterLink to="/project">
+                        <Button label="View Projects" size="large" severity="primary" icon="pi pi-arrow-right" icon-pos="right" />
+                    </RouterLink>
+                    <RouterLink to="/contact">
+                        <Button label="Contact Me" size="large" severity="primary" variant="outlined"/>
+                    </RouterLink>
                 </div>
             </div>
             <div class="flex-1 card-board animate-fade-in-right">

@@ -67,7 +67,7 @@ onMounted(() => {
 
     }
 
-    :deep.p-timeline-vertical.p-timeline-alternate .p-timeline-event:nth-child(even) .p-timeline-event-content {
+    :deep(.p-timeline-vertical.p-timeline-alternate .p-timeline-event:nth-child(even) .p-timeline-event-content) {
         text-align: left !important;
     }
 

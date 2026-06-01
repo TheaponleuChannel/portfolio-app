@@ -6,6 +6,12 @@
             >
                 <InfoInterest/>
             </div>
+            <!-- <div
+              v-scroll-reveal="{ enterClass: 'animate-fade-in-up' }"
+              class="scroll-hidden"
+            >
+                <TechStack/>
+            </div> -->
             <div
               v-scroll-reveal="{ enterClass: 'animate-fade-in-up' }"
               class="scroll-hidden anim-delay-100"
@@ -32,4 +38,5 @@ import CallToAction from '../components/CallToAction.vue';
 import InfoInterest from '../components/InfoInterest.vue';
 import ProjectFeature from '../components/ProjectFeature.vue';
 import State from '../components/State.vue';
+import TechStack from '../components/TechStack.vue';
 </script>

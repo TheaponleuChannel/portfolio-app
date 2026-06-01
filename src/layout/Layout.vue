@@ -7,6 +7,8 @@ import ThemeSwitcher from './top-header/ThemeSwitcher.vue';
 import Button from 'primevue/button';
 import Menu from 'primevue/menu';
 import { ref, type Ref } from "vue";
+import ScrollPanel from 'primevue/scrollpanel';
+
 
 const menu = ref();
 const items: Ref<MenuItem[]> = ref([
@@ -37,7 +39,7 @@ const showMenu = (event: Event) => {
 </script>
 
 <template>
-    <div class="sticky mx-auto w-full lg:container top-5 z-10 m-5 h-16 rounded-[16px] border border-[#0000001f] bg-header transition-all duration-300 ease-in-out">
+    <div class="sticky mx-auto w-full lg:container top-5 z-10 m-5 rounded-[16px] border border-[#0000001f] bg-header transition-all duration-300 ease-in-out">
         <div class=" h-full mx-auto px-4 flex justify-between items-center">
             <div class="flex gap-4 items-center">
                 <div class="hidden max-sm:block">
@@ -52,7 +54,7 @@ const showMenu = (event: Event) => {
             <ThemeSwitcher/>
         </div>
     </div>
-    <div class="scroll-container overflow-y-auto flex flex-col min-h-[95vh] ">
+    <ScrollPanel  class="scroll-container overflow-y-auto flex flex-col min-h-[95vh] ">
         <div class="flex-1 min-h-auto">
             <router-view v-slot="{ Component }">
                 <transition name="route-fade" mode="out-in">
@@ -71,7 +73,7 @@ const showMenu = (event: Event) => {
                 </p>
             </div>
         </div>
-    </div>
+    </ScrollPanel>
 </template>
 
 <style>

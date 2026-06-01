@@ -1,3 +1,3 @@
 <template>
-    <p>not found page</p>
+    <p class="text-2xl text-center">Page not found</p>
 </template>
