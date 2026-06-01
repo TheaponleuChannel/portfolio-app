@@ -1,13 +1,11 @@
 <script setup lang="ts">
 import Branding from '../top-header/Branding.vue';
 import { RouterLink } from 'vue-router';
-    const listMenu: string[] = ["Home", "About", "Project", "Contact"];
-    const listService: string[] = ["Web Development", "UI/UX Design", "Mobile App", "Consulting"];
-    const listLegal: string[] = ["Privacy Policy", "Terms of Service", "Cookie Policy"];
+    const listMenu: string[] = ["Home", "About","Project","Resources", "Articles", "Contact"];
 </script>
 
 <template>
-    <footer class="grid grid-cols-4 gap-4 max-w-9/10 mx-auto pt-[3rem] max-lg:w-full max-lg:grid-cols-2 max-sm:grid-cols-1 ">
+    <footer class="container mx-auto flex flex-wrap justify-between py-[2rem]">
         <div>
             <Branding/>
             <div class="pt-[15px]">
@@ -23,35 +21,13 @@ import { RouterLink } from 'vue-router';
             </div>
         </div>
 
-        <div>
+        <div class="min-w-[200px]">
             <h3 class="flex items-center h-[28px]"><b>Navigation</b></h3>
-            <div class="flex flex-col gap-2 pt-[15px]">
+            <div class="grid grid-cols-2 gap-2 pt-[15px]">
                 <li v-for="(item, index) in listMenu" :key="index" class="list-none" >
                     <RouterLink :to="item.toLocaleLowerCase()" class=" primary-color-hover text-lg font-semibold text-[#9c9ca4] ">
                         <a class="mb-[1rem]">{{item}}</a>
                     </RouterLink>
-                </li>
-            </div>
-        </div>
-
-        <div >
-            <h3 class="flex items-center h-[28px]"> <b>Service</b></h3>
-            <div class="flex flex-col gap-2 pt-[15px]">
-                <li v-for="(item, index) in listService" :key="index" class="list-none cursor-pointer" >
-                    <div class=" primary-color-hover text-lg font-semibold text-[#9c9ca4] ">
-                        <a class="mb-[1rem]">{{item}}</a>
-                    </div>
-                </li>
-            </div>
-        </div>
-
-        <div>
-            <h3 class="flex items-center h-[28px]"><b>Legal</b></h3>
-            <div class="flex flex-col gap-2 pt-[15px]">
-                <li v-for="(item, index) in listLegal" :key="index" class="list-none cursor-pointer" >
-                <div class=" primary-color-hover text-lg font-semibold text-[#9c9ca4] ">
-                    <a class="mb-[1rem]">{{item}}</a>
-                </div>
                 </li>
             </div>
         </div>

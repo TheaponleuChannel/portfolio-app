@@ -63,7 +63,7 @@ const showMenu = (event: Event) => {
         <div class="bg-footer bg-footer-dark inset-shadow-2xs">
             <Footer/>
             
-            <hr class="mt-[1rem]">
+            <hr>
     
             <div class="copy-right py-[2.5rem]">
                 <p class="text-center text-[#9c9ca4]">
