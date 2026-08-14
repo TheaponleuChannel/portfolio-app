@@ -38,5 +38,4 @@ import CallToAction from '../components/CallToAction.vue';
 import InfoInterest from '../components/InfoInterest.vue';
 import ProjectFeature from '../components/ProjectFeature.vue';
 import State from '../components/State.vue';
-import TechStack from '../components/TechStack.vue';
 </script>

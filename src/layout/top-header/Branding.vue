@@ -14,7 +14,7 @@
     import { RouterLink } from 'vue-router';
     import pfImg from '../../assets/photo/pf.jpg';
 
-    const props = defineProps({
+    defineProps({
         isFooter: {
             type: Boolean,
             default: false
