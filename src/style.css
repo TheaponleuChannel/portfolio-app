@@ -4,18 +4,21 @@
 @import 'vue-map-ui/dist/style.css';
 @import 'vue-map-ui/dist/theme-all.css';
 @import "primeicons/primeicons.css";
+
 html {
   font-size: 14px;
   line-height: normal;
   font-family: Inter, sans-serif;
 }
 
+html {
+  background-color: #f5f7fc;
+}
+
 body {
   margin: 0;
-  /* min-width: 320px; */
-  /* min-height: 100vh; */
-  /* font-family: Inter, sans-serif; */
-  /* background-color: #000000; */
+  isolation: isolate;
+  background-color: #f5f7fc;
 }
 
 
@@ -64,18 +67,28 @@ body {
 }
 
 .bg-footer {
-    background-color: #f4f4f5;
+    background: linear-gradient(180deg, #ffffff 0%, #e8edf959 55%, #d9e2f560 100%);
+    background-size: 100% 300%;
+    border-top: 1px solid rgba(99, 102, 241, 0.22);
+    animation: footer-breathe 9s ease-in-out infinite;
+    transition: border-color 0.3s ease;
+}
+
+.bg-footer:hover {
+    border-top-color: rgba(99, 102, 241, 0.55);
 }
 
 .my-app-dark .bg-footer-dark {
-    background-color: #27272a;
+    background: linear-gradient(180deg, #22242ead 0%, #16181f59 55%, #0d0e1479 100%);
+    background-size: 100% 300%;
+    border-top: 1px solid rgba(99, 102, 241, 0.35);
 }
 
-.bg-wrap-shadow {
-  background-color: linear-gradient(to right,#0f1a30 , #1a0e25);
-  /* -webkit-background-clip: background; */
-  /* -webkit-text-fill-color: transparent; */
+@keyframes footer-breathe {
+    0%, 100% { background-position: 0% 0%; }
+    50%      { background-position: 0% 100%; }
 }
+
 
 .bg-wrap-content {
   background-color: #ffffff;
@@ -102,6 +115,69 @@ body {
   .bg-dark {
     background-color: var(--p-primary-color);
   }
+}
+
+/* ==========================================================================
+   ANIMATED "CODE VIBE" BODY BACKGROUND
+   ========================================================================== */
+.my-app-dark html,
+.my-app-dark body {
+  background-color: #0d1117;
+}
+
+/* Aurora glow + code grid, fixed behind the page content */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Drifting aurora glow */
+body::before {
+  background:
+    radial-gradient(650px circle at 12% 18%, rgba(99, 102, 241, 0.18), transparent 62%),
+    radial-gradient(750px circle at 82% 12%, rgba(45, 212, 191, 0.15), transparent 62%),
+    radial-gradient(850px circle at 55% 92%, rgba(168, 85, 247, 0.13), transparent 62%);
+  background-size: 180% 180%;
+  animation: body-aurora 26s ease-in-out infinite alternate;
+}
+
+.my-app-dark body::before {
+  background:
+    radial-gradient(650px circle at 12% 18%, rgba(99, 102, 241, 0.3), transparent 62%),
+    radial-gradient(750px circle at 82% 12%, rgba(45, 212, 191, 0.26), transparent 62%),
+    radial-gradient(850px circle at 55% 92%, rgba(168, 85, 247, 0.24), transparent 62%);
+}
+
+/* Slowly scrolling code-editor grid */
+body::after {
+  background-image:
+    linear-gradient(to right, rgba(115, 130, 170, 0.09) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(115, 130, 170, 0.09) 1px, transparent 1px);
+  background-size: 46px 46px;
+  -webkit-mask-image: radial-gradient(ellipse at center, black 45%, transparent 82%);
+  mask-image: radial-gradient(ellipse at center, black 45%, transparent 82%);
+  animation: body-grid-drift 55s linear infinite;
+}
+
+.my-app-dark body::after {
+  background-image:
+    linear-gradient(to right, rgba(125, 165, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(125, 165, 255, 0.08) 1px, transparent 1px);
+}
+
+@keyframes body-aurora {
+  0%   { background-position: 0% 0%; }
+  50%  { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+@keyframes body-grid-drift {
+  from { background-position: 0 0; }
+  to   { background-position: 0 46px; }
 }
 @Import "assets/_custom_scss/_icon.scss";
 
@@ -302,5 +378,14 @@ body {
   .scroll-hidden-scale {
     opacity: 1;
     transform: none;
+  }
+
+  body::before,
+  body::after {
+    animation: none;
+  }
+
+  .bg-footer {
+    animation: none;
   }
 }

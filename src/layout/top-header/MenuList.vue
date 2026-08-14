@@ -27,10 +27,59 @@
 <style scoped>
 
 .menu-list {
+  position: relative;
+  background-color: rgb(0 65 255 / 7%);
   gap: 0.4rem;
   margin: 0;
   padding: 0.25rem;
   border-radius: 5px;
+}
+.my-app-dark .menu-list {
+  background-color: rgba(2, 2, 2, 0.226);
+}
+
+/* Rotating gradient ring — two arcs run around the container border */
+@property --menu-border-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.menu-list::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 2px;
+  pointer-events: none;
+  background: conic-gradient(
+    from var(--menu-border-angle),
+    transparent 0deg,
+    transparent 120deg,
+    #6d77ed 120deg,
+    #974dd1 135deg,
+    transparent 150deg,
+    transparent 300deg,
+    #6d77ed 300deg,
+    #974dd1 315deg,
+    transparent 330deg
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0) padding-box;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: menu-border-rotate 6s linear infinite;
+}
+
+@keyframes menu-border-rotate {
+  to { --menu-border-angle: 360deg; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-list::before {
+    animation: none;
+  }
 }
 
 .menu-item {
@@ -97,11 +146,6 @@
 .menu-item:focus-visible,
 .menu-item.active-link {
   color: var(--p-primary-color);
-}
-
-
-:global(.my-app-dark) .menu-item::before {
-  background: linear-gradient(135deg, rgba(75, 135, 244, 0.26), rgba(20, 184, 166, 0.2));
 }
 
 
