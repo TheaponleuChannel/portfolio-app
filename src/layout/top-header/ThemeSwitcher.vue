@@ -1,14 +1,18 @@
 <template>
-    <div class="flex gap-4">
+    <div class="flex gap-2">
+        <div class="border-l border-primary-color h-5 m-auto"></div>
         <ul class="flex list-none m-0 p-0 gap-2 items-center">
             <li>
                 <div v-tooltip.bottom="'Toggle Dark/Light Mode'">
-                    <input type="checkbox" class="checkbox" id="checkbox" v-model="isDark" :checked="isDark" @change="onThemeToggler">
+                    <!-- <input type="checkbox" class="checkbox" id="checkbox" v-model="isDark" :checked="isDark" @change="onThemeToggler">
                     <label for="checkbox" class="checkbox-label" >
                         <i class="pi pi-moon"/>
                         <i class="pi pi-sun"/>
                         <span class="ball"></span>
-                    </label>
+                    </label> -->
+
+                        <Button :icon="`pi ${isDark ? 'pi-sun' : 'pi-moon'}`" severity="info" rounded variant="outlined" size="small" @click="onThemeToggler" />
+
                 </div>
             </li>
             <li >
@@ -71,6 +75,7 @@
 // import Popover from 'primevue/popover';
 
 
+import Button from 'primevue/button';
 import { onMounted, ref } from 'vue';
 // const presets = {Aura,Lara,Nora};
 // const primaryColors = [
@@ -487,9 +492,10 @@ onMounted(() => {
 })
 
 const onThemeToggler = () => {
-    const isDarkMode = isDark.value;
-    localStorage.setItem('isDarkMode', isDarkMode ? 'true' : 'false');
-    document.documentElement.classList.toggle('my-app-dark', isDarkMode);
+    const isDarkMode = localStorage.getItem('isDarkMode');
+    isDark.value = !(isDarkMode === 'true');
+    localStorage.setItem('isDarkMode', isDark.value ? 'true' : 'false');
+    document.documentElement.classList.toggle('my-app-dark', isDark.value);
 }
 
 // const showConfig = (event: Event) => {
@@ -560,5 +566,6 @@ const onThemeToggler = () => {
 .checkbox:checked + .checkbox-label .ball {
   transform: translateX(24px);
 }
+
 
 </style>

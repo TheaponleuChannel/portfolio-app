@@ -5,9 +5,9 @@ import { RouterLink } from 'vue-router';
 </script>
 
 <template>
-    <footer class="container mx-auto flex flex-wrap justify-between py-[2rem]">
+    <footer class="container mx-auto flex justify-between max-sm:flex-col gap-y-4 max-sm:p-[2rem] py-2">
         <div>
-            <Branding/>
+            <Branding :isFooter="true"/>
             <div class="pt-[15px]">
                 <p class="font-semibold text-[#9c9ca4] text-lg">
                     Building exceptional digital experiences with modern web technologies.
@@ -22,12 +22,12 @@ import { RouterLink } from 'vue-router';
         </div>
 
         <div class="min-w-[200px]">
-            <h3 class="flex items-center h-[28px]"><b>Navigation</b></h3>
+            <h3 class="flex items-center h-[25px]"><b>Navigation</b></h3>
             <div class="grid grid-cols-2 gap-2 pt-[15px]">
                 <li v-for="(item, index) in listMenu" :key="index" class="list-none" >
                     <RouterLink :to="item.toLocaleLowerCase()" class=" primary-color-hover text-lg font-semibold text-[#9c9ca4] ">
                         <a class="mb-[1rem]">{{item}}</a>
-                    </RouterLink>
+                    </RouterLink "/>
                 </li>
             </div>
         </div>
