@@ -71,18 +71,34 @@ interface Stat {
 
 <style scoped>
     .bg-content2 {
-        background-color: #f4f4f5;
+        background-color: #39393b21;
     }
 
     .bg-state-item {
-        background-color: #ffffff;
+        background-color: #ffffff48;
+        transition: all 0.5s ease-in-out;
+
     }
 
     .my-app-dark .bg-state-item {
-        background-color: #18181b;
+        background-color: #18181b4b;
     }
 
     .my-app-dark .bg-content2 {
-        background-color: #27272a;
+        background-color: #27272a54;
     }
+    
+    .bg-state-item:hover {
+      background-color: #d4d5d85e;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(95, 68, 250, 0.5);
+      
+    }
+    .my-app-dark.bg-state-item:hover {
+      background-color: #151e38d1;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(47, 0, 255, 0.5);
+      
+    }
+    
 </style>
