@@ -55,7 +55,7 @@
                         <h3 class="font-semibold mb-2">Experience</h3>
                         <p class="text-default-500 flex items-center gap-2">
                              <i class="pi pi-briefcase" style="font-size: 1rem; color: #3665ea"></i>
-                            2+ Years
+                            3+ Years
                         </p>
                     </div>
                     <div>
@@ -106,11 +106,19 @@
     import SkillSection from '../components/SkillSection.vue';
     import ExperienceTimeLine from '../components/ExperienceTimeLine.vue';
 
-    const onDownload = () => {
-        const link = document.createElement('a');
-        link.href = '/public/doc/THEA PONLEU Web Developer.pdf';
-        link.download = '/public/doc/THEA PONLEU Web Developer.pdf';
-        link.click();
+    const onDownload = async () => {
+        const fileUrl = '/doc/THEA-PONLEU-Web-Developer.pdf';
+        try {
+            const response = await fetch(fileUrl);
+            const blob = await response.blob();
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'THEA PONLEU-Web-Developer.pdf';
+            link.click();
+            URL.revokeObjectURL(link.href);
+        } catch {
+            window.open(fileUrl, '_blank');
+        }
     }
 
 </script>

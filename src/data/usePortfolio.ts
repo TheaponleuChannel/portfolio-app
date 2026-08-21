@@ -44,12 +44,12 @@ export const frontendSkills: Skill[] = [
 ]
 
 export const backendSkills: Skill[] = [
-  { name: 'Node.js', level: 25, icon: 'icons/nodejs.png', color: '#0ec968' },
-  { name: 'Express', level: 25, icon: 'icons/express-js.png', color: '#71717a' },
-  { name: 'MongoDB', level: 10, icon: 'icons/mongodb.png', color: '#0ec968' },
+  { name: 'Node.js', level: 50, icon: 'icons/nodejs.png', color: '#0ec968' },
+  { name: 'Express', level: 50, icon: 'icons/express-js.png', color: '#71717a' },
+  { name: 'MongoDB', level: 50, icon: 'icons/mongodb.png', color: '#0ec968' },
   { name: 'PostgreSQL', level: 5, icon: 'icons/postgre.png', color: '#3665eb' },
   { name: 'GraphQL', level: 5, icon: 'icons/graphql.png', color: '#984bd0' },
-  { name: 'Docker', level: 5, icon: 'icons/docker.png', color: '#3665eb' },
+  { name: 'Docker', level: 50, icon: 'icons/docker.png', color: '#3665eb' },
 ]
 
 export const experienceTimeLine: ExperienceTimeLine[] = [

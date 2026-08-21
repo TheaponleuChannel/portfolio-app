@@ -77,10 +77,10 @@ import ProgressBar from 'primevue/progressbar';
 
 <style scoped>
     .bg-content2 {
-        background-color: #f4f4f5;
+        background-color: #f4f4f54f;
     }
 
     .my-app-dark .bg-content2 {
-        background-color: #27272a;
+        background-color: #27272a50;
     }
 </style>
