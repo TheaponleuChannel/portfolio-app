@@ -1,3 +1,9 @@
+export interface ProjectOverview {
+  about?: string;
+  developmentProcess?: string;
+  challenges?: string;
+}
+
 export interface Project {
   id: number;
   title: string;
@@ -10,6 +16,8 @@ export interface Project {
   features?: string[];
   demoUrl?: string;
   githubUrl?: string;
+  liveUrl?: string;
   screenshots?: string[];
   detailComponent?: string;
+  overview?: ProjectOverview;
 }

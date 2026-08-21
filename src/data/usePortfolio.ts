@@ -4,15 +4,33 @@ import type { Project } from "../models/project";
 import type { Skill } from "../models/skill";
 
 export const projects: Project[] = [
+  // {
+  //   id: 1,
+  //   title: 'Analytics Dashboard',
+  //   description: 'A comprehensive analytics dashboard with real-time data visualization, user tracking, and customizable reports.',
+  //   longDescription: 'This analytics dashboard provides businesses with powerful insights through interactive charts and customizable widgets. It features real-time data processing, user behavior tracking, and automated reporting capabilities. The responsive design ensures a seamless experience across all devices.',
+  //   category: 'Web portal',
+  //   categoryColor: 'primary',
+  //   image: 'https://images.klipfolio.com/website/public/5a275fee-d42b-4f31-91f6-8148d4d729af/executive%20dashboard.png',
+  //   technologies: ['React', 'TypeScript', 'Recharts', 'Node.js', 'MongoDB'],
+  // },
   {
-    id: 1,
-    title: 'Analytics Dashboard',
-    description: 'A comprehensive analytics dashboard with real-time data visualization, user tracking, and customizable reports.',
-    longDescription: 'This analytics dashboard provides businesses with powerful insights through interactive charts and customizable widgets. It features real-time data processing, user behavior tracking, and automated reporting capabilities. The responsive design ensures a seamless experience across all devices.',
-    category: 'Dashboard',
+    id: 2,
+    title: 'Portfolio Website',
+    description: 'A modern, responsive developer portfolio built to showcase my projects, technical skills, experience, and achievements. Designed with performance, clean UI, and a seamless user experience in mind.',
+    longDescription: 'A personal portfolio website that represents my journey as a software developer, featuring selected projects, technical expertise, professional experience, and ways to connect with me. The portfolio is designed with a modern and minimal user interface while focusing on speed, responsiveness, and accessibility. It serves as both a professional resume and a showcase of real-world applications I have built using modern web technologies.',
+    category: 'Website',
     categoryColor: 'primary',
-    image: 'https://images.klipfolio.com/website/public/5a275fee-d42b-4f31-91f6-8148d4d729af/executive%20dashboard.png',
-    technologies: ['React', 'TypeScript', 'Recharts', 'Node.js', 'MongoDB'],
+    liveUrl: 'https://theaponleu.dev/home',
+    image: '/photo/portfolio.png',
+    features: ['Project showcase with live demos', 'Dark mode with persistent theme', 'Scroll-reveal animations', 'Responsive across all devices', 'Tech stack visualization marquee', 'Contact form integration'],
+    screenshots: ['/photo/portfolio.png', '/photo/home-page.png'],
+    overview: {
+      about: 'A personal portfolio website that represents my journey as a software developer, featuring selected projects, technical expertise, professional experience, and ways to connect with me. The portfolio is designed with a modern and minimal user interface while focusing on speed, responsiveness, and accessibility. It serves as both a professional resume and a showcase of real-world applications I have built using modern web technologies.',
+      developmentProcess: 'The development process began with planning the information architecture and wireframing the key pages. I chose Vue.js for its simplicity and PrimeVue for a polished component library. I focused on responsive design, dark mode support, and smooth scroll-reveal animations to create a premium feel. The backend uses Express and MongoDB for blog content and contact form handling.',
+      challenges: 'One of the main challenges was implementing a seamless dark mode toggle that persists across sessions while keeping all components visually consistent. I solved this by using CSS custom properties and a scoped class strategy. Another challenge was optimizing image loading and scroll performance on mobile devices, which I addressed with lazy loading, IntersectionObserver-based animations, and responsive image techniques.',
+    },
+    technologies: ['Vue', 'TypeScript', 'PrimeVue', 'Express', 'MongoDB'],
   },
 ]
 

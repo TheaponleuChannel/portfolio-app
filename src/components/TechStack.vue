@@ -2,7 +2,7 @@
   <section class="py-12">
     <div class="container mx-auto px-4">
       <!-- Section header -->
-      <div class="text-center mb-10">
+      <div class="text-center mb-6">
         <h2 class="text-2xl md:text-3xl font-bold mb-2">
           My <span class="gradient-text">Tech Stack</span>
         </h2>
