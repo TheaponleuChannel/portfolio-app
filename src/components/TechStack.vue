@@ -65,19 +65,19 @@ interface TechItem {
 const paused = ref(false);
 
 const techStack: TechItem[] = [
-  { name: 'Angular',    icon: '/src/assets/icons/angular.png' },
-  { name: 'Docker',     icon: '/src/assets/icons/docker.png' },
-  { name: 'Express',    icon: '/src/assets/icons/express-js.png' },
-  { name: 'GraphQL',    icon: '/src/assets/icons/graphql.png' },
-  { name: 'HTML/CSS',   icon: '/src/assets/icons/html-css.png' },
-  { name: 'HTML',       icon: '/src/assets/icons/html.png' },
-  { name: 'JavaScript', icon: '/src/assets/icons/javaScript.png' },
-  { name: 'MongoDB',    icon: '/src/assets/icons/mongodb.png' },
-  { name: 'Node.js',    icon: '/src/assets/icons/nodejs.png' },
-  { name: 'PostgreSQL', icon: '/src/assets/icons/postgre.png' },
-  { name: 'React',      icon: '/src/assets/icons/react.png' },
-  { name: 'TypeScript', icon: '/src/assets/icons/typescript.png' },
-  { name: 'Vue',        icon: '/src/assets/icons/vue.png' },
+  { name: 'Angular',    icon: '/icons/angular.png' },
+  { name: 'Docker',     icon: '/icons/docker.png' },
+  { name: 'Express',    icon: '/icons/express-js.png' },
+  { name: 'GraphQL',    icon: '/icons/graphql.png' },
+  { name: 'HTML/CSS',   icon: '/icons/html-css.png' },
+  { name: 'HTML',       icon: '/icons/html.png' },
+  { name: 'JavaScript', icon: '/icons/javaScript.png' },
+  { name: 'MongoDB',    icon: '/icons/mongodb.png' },
+  { name: 'Node.js',    icon: '/icons/nodejs.png' },
+  { name: 'PostgreSQL', icon: '/icons/postgre.png' },
+  { name: 'React',      icon: '/icons/react.png' },
+  { name: 'TypeScript', icon: '/icons/typescript.png' },
+  { name: 'Vue',        icon: '/icons/vue.png' },
 ];
 </script>
 
