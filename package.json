@@ -12,6 +12,7 @@
     "@primeuix/themes": "^1.2.1",
     "@primevue/forms": "^4.3.7",
     "@tailwindcss/vite": "^4.1.11",
+    "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
     "leaflet": "^1.9.4",
     "primeicons": "^7.0.0",
