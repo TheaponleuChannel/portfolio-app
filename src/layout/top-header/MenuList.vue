@@ -33,9 +33,12 @@
   margin: 0;
   padding: 0.25rem;
   border-radius: 5px;
+  backdrop-filter: blur(4px);
 }
 .my-app-dark .menu-list {
   background-color: rgba(2, 2, 2, 0.226);
+  backdrop-filter: blur(4px);
+
 }
 
 /* Rotating gradient ring — two arcs run around the container border */
@@ -110,6 +113,11 @@
 .menu-icon {
   font-size: 1.35rem;
   transition: transform 0.2s ease, color 0.2s ease;
+  color: #000;
+}
+
+.my-app-dark .menu-icon {
+  color: rgba(240, 255, 255, 0.808);
 }
 
 .menu-item:hover .menu-label,
@@ -123,6 +131,8 @@
 .menu-item:hover .menu-icon,
 .menu-item:focus-visible .menu-icon {
   transform: translateX(3px);
+  color: var(--p-primary-color);
+
 }
 
 .menu-item::before {
@@ -144,7 +154,8 @@
 
 .menu-item:hover,
 .menu-item:focus-visible,
-.menu-item.active-link {
+.menu-item.active-link
+.menu-icon {
   color: var(--p-primary-color);
 }
 

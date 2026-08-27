@@ -6,7 +6,7 @@
                 Learn more about my background, skills, and experience as a web developer.
             </h6>
         </div>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20  max-sm:mx-5">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20 max-sm:mx-5">
             <div 
               v-scroll-reveal="{ enterClass: 'animate-fade-in-left' }" 
               class="img-section scroll-hidden-left"

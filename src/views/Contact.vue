@@ -15,13 +15,13 @@ import Location from '../components/Location.vue';
         </div>
         <div 
           v-scroll-reveal="{ enterClass: 'animate-fade-in-up' }" 
-          class="scroll-hidden"
+          class="scroll-hidden max-sm:mx-5"
         >
             <InformationCard />
         </div>
         <div 
           v-scroll-reveal="{ enterClass: 'animate-fade-in-up' }" 
-          class="grid grid-cols-1 lg:grid-cols-2 gap-12 scroll-hidden anim-delay-200"
+          class="grid grid-cols-1 lg:grid-cols-2 gap-12 scroll-hidden anim-delay-200 max-sm:mx-5"
         >
             <ContactForm />
             <div>
