@@ -1,6 +1,7 @@
 import type { ContactInfo } from "../models/contact-information";
 import type { ExperienceTimeLine } from "../models/experience-time-line";
 import type { Project } from "../models/project";
+import type { Resource, ResourceCategory } from "../models/resource";
 import type { Skill } from "../models/skill";
 
 export const projects: Project[] = [
@@ -117,6 +118,115 @@ export const contactInfo: ContactInfo[] = [
       link: 'https://www.linkedin.com/in/thea-ponleu-331a5a287/',
       color: '#338ef7',
       bgColor: '#002e62'
-    
+
     }
   ];
+
+export const resourceCategories: ResourceCategory[] = [
+  { name: 'Article', color: '#3665ea', icon: 'pi-file-edit' },
+  { name: 'Tool', color: '#0ec968', icon: 'pi-wrench' },
+  { name: 'Book', color: '#984bd0', icon: 'pi-book' },
+  { name: 'Course', color: '#d4930a', icon: 'pi-graduation-cap' },
+  { name: 'Video', color: '#f34981', icon: 'pi-play-circle' },
+];
+
+export const resources: Resource[] = [
+  {
+    id: 1,
+    title: 'Vue 3 Composition API — Best Practices',
+    description:
+      'A deep dive into structuring composables, sharing reactive state and keeping components lean with the Composition API.',
+    category: 'Article',
+    link: 'https://vuejs.org/guide/reusability/composables',
+    author: 'Vue Team',
+    readTime: '8 min read',
+    date: 'Jan 2026',
+    tags: ['Vue', 'Composition API', 'Patterns'],
+    featured: true,
+  },
+  {
+    id: 2,
+    title: 'Vite — Next Generation Frontend Tooling',
+    description:
+      'Why Vite became my default build tool: instant server start, lightning HMR and a first-class Vue experience.',
+    category: 'Tool',
+    link: 'https://vitejs.dev',
+    author: 'Evan You',
+    readTime: '5 min read',
+    date: 'Dec 2025',
+    tags: ['Build', 'DX', 'Performance'],
+  },
+  {
+    id: 3,
+    title: "You Don't Know JS Yet",
+    description:
+      'The book series that reshaped how I understand scope, closures and the type system beneath JavaScript.',
+    category: 'Book',
+    link: 'https://github.com/getify/You-Dont-Know-JS',
+    author: 'Kyle Simpson',
+    readTime: 'Series',
+    date: '2020',
+    tags: ['JavaScript', 'Fundamentals'],
+    featured: true,
+  },
+  {
+    id: 4,
+    title: 'TypeScript Deep Dive',
+    description:
+      'A free, community-driven course covering generics, utility types and real-world patterns for typing large apps.',
+    category: 'Course',
+    link: 'https://basarat.gitbook.io/typescript',
+    author: 'Basarat Ali Syed',
+    readTime: 'Self-paced',
+    date: '2025',
+    tags: ['TypeScript', 'Types'],
+  },
+  {
+    id: 5,
+    title: 'Understanding Reactivity in Vue',
+    description:
+      'A visual walkthrough of how Vue tracks dependencies and triggers updates behind the reactivity system.',
+    category: 'Video',
+    link: 'https://www.youtube.com/watch?v=NZfNS4sSSy8',
+    author: 'Vue Mastery',
+    readTime: '22 min',
+    date: 'Nov 2025',
+    tags: ['Vue', 'Reactivity'],
+  },
+  {
+    id: 6,
+    title: 'CSS Grid vs Flexbox — When to Use Which',
+    description:
+      'A practical comparison with layout recipes so you stop guessing which one fits the job.',
+    category: 'Article',
+    link: 'https://css-tricks.com/css-grid-replace-flexbox',
+    author: 'CSS-Tricks',
+    readTime: '10 min read',
+    date: 'Oct 2025',
+    tags: ['CSS', 'Layout', 'Responsive'],
+  },
+  {
+    id: 7,
+    title: 'PrimeVue — Rich UI Component Library',
+    description:
+      'The component library powering this portfolio: accessible, themeable and packed with production-ready widgets.',
+    category: 'Tool',
+    link: 'https://primevue.org',
+    author: 'PrimeTek',
+    readTime: '6 min read',
+    date: '2026',
+    tags: ['UI', 'Vue', 'Components'],
+  },
+  {
+    id: 8,
+    title: 'Refactoring UI',
+    description:
+      'Design tactics for developers — spacing, hierarchy and color decisions that make interfaces feel polished.',
+    category: 'Book',
+    link: 'https://www.refactoringui.com',
+    author: 'Adam Wathan & Steve Schoger',
+    readTime: 'Book',
+    date: '2024',
+    tags: ['Design', 'UI', 'UX'],
+  },
+];
