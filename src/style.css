@@ -118,66 +118,32 @@ body {
 }
 
 /* ==========================================================================
-   ANIMATED "CODE VIBE" BODY BACKGROUND
+   ROOT BACKGROUND — solid base + subtle dot texture (no gradients)
    ========================================================================== */
 .my-app-dark html,
 .my-app-dark body {
   background-color: #0d1117;
 }
 
-/* Aurora glow + code grid, fixed behind the page content */
-body::before,
-body::after {
+/* Subtle "code" texture — faint programming glyphs, fixed behind the content */
+body::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -1;
   pointer-events: none;
-}
-
-/* Drifting aurora glow */
-body::before {
-  background:
-    radial-gradient(650px circle at 12% 18%, rgba(99, 102, 241, 0.18), transparent 62%),
-    radial-gradient(750px circle at 82% 12%, rgba(45, 212, 191, 0.15), transparent 62%),
-    radial-gradient(850px circle at 55% 92%, rgba(168, 85, 247, 0.13), transparent 62%);
-  background-size: 180% 180%;
-  animation: body-aurora 26s ease-in-out infinite alternate;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='150'%20height='150'%3E%3Cg%20fill='%23334155'%20fill-opacity='0.06'%20font-family='Consolas,Monaco,monospace'%20font-size='15'%20font-weight='600'%3E%3Ctext%20x='12'%20y='30'%3E%26lt%3B/%26gt%3B%3C/text%3E%3Ctext%20x='104'%20y='26'%3E%7B%20%7D%3C/text%3E%3Ctext%20x='60'%20y='62'%3E=%26gt%3B%3C/text%3E%3Ctext%20x='20'%20y='94'%3E(%20)%3C/text%3E%3Ctext%20x='110'%20y='100'%3E%3B%3C/text%3E%3Ctext%20x='70'%20y='126'%3E%5B%20%5D%3C/text%3E%3Ctext%20x='38'%20y='128'%3E//%3C/text%3E%3C/g%3E%3C/svg%3E");
+  background-size: 150px 150px;
+  animation: body-code-drift 90s linear infinite;
 }
 
 .my-app-dark body::before {
-  background:
-    radial-gradient(650px circle at 12% 18%, rgba(99, 102, 241, 0.3), transparent 62%),
-    radial-gradient(750px circle at 82% 12%, rgba(45, 212, 191, 0.26), transparent 62%),
-    radial-gradient(850px circle at 55% 92%, rgba(168, 85, 247, 0.24), transparent 62%);
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='150'%20height='150'%3E%3Cg%20fill='%237da5ff'%20fill-opacity='0.08'%20font-family='Consolas,Monaco,monospace'%20font-size='15'%20font-weight='600'%3E%3Ctext%20x='12'%20y='30'%3E%26lt%3B/%26gt%3B%3C/text%3E%3Ctext%20x='104'%20y='26'%3E%7B%20%7D%3C/text%3E%3Ctext%20x='60'%20y='62'%3E=%26gt%3B%3C/text%3E%3Ctext%20x='20'%20y='94'%3E(%20)%3C/text%3E%3Ctext%20x='110'%20y='100'%3E%3B%3C/text%3E%3Ctext%20x='70'%20y='126'%3E%5B%20%5D%3C/text%3E%3Ctext%20x='38'%20y='128'%3E//%3C/text%3E%3C/g%3E%3C/svg%3E");
 }
 
-/* Slowly scrolling code-editor grid */
-body::after {
-  background-image:
-    linear-gradient(to right, rgba(115, 130, 170, 0.09) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(115, 130, 170, 0.09) 1px, transparent 1px);
-  background-size: 46px 46px;
-  -webkit-mask-image: radial-gradient(ellipse at center, black 45%, transparent 82%);
-  mask-image: radial-gradient(ellipse at center, black 45%, transparent 82%);
-  animation: body-grid-drift 55s linear infinite;
-}
-
-.my-app-dark body::after {
-  background-image:
-    linear-gradient(to right, rgba(125, 165, 255, 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(125, 165, 255, 0.08) 1px, transparent 1px);
-}
-
-@keyframes body-aurora {
-  0%   { background-position: 0% 0%; }
-  50%  { background-position: 100% 100%; }
-  100% { background-position: 0% 0%; }
-}
-
-@keyframes body-grid-drift {
+@keyframes body-code-drift {
   from { background-position: 0 0; }
-  to   { background-position: 0 46px; }
+  to   { background-position: 150px 150px; }
 }
 @Import "assets/_custom_scss/_icon.scss";
 
@@ -380,8 +346,7 @@ body::after {
     transform: none;
   }
 
-  body::before,
-  body::after {
+  body::before {
     animation: none;
   }
 
