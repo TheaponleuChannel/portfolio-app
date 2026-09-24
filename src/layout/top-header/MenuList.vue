@@ -2,7 +2,12 @@
     <div>
         <menu class="menu-list flex items-center justify-around">
             <li v-for="item in listMenu" :key="item.name" class="list-none " >
-              <RouterLink :to="item.path" active-class="active-link" class="menu-item text-lg" :aria-label="item.name">
+              <RouterLink
+                :to="item.path"
+                class="menu-item text-lg"
+                :class="{ 'active-link': isActive(item.path) }"
+                :aria-label="item.name"
+              >
                 <i :class="item.icon" class="menu-icon"/>
                 <span class="menu-label">{{ item.name }}</span>
               </RouterLink>
@@ -12,7 +17,16 @@
 </template>
 
 <script setup lang="ts">
-    import { RouterLink } from 'vue-router';
+    import { RouterLink, useRoute } from 'vue-router';
+    const route = useRoute();
+
+    /**
+     * RouterLink's own active class only fires for exact or nested matches, so a
+     * sub-route like /articles/:slug would leave "Articles" unhighlighted. Treat
+     * any descendant path as active for its menu entry.
+     */
+    const isActive = (path: string) => route.path === path || route.path.startsWith(`${path}/`);
+
     const listMenu = [
         { name: "Home", path: "/home", icon: "pi pi-home" },
         { name: "About", path: "/about", icon: "pi pi-id-card" },

@@ -7,6 +7,7 @@ import Contact from '../views/Contact.vue'
 import NotFound from '../views/NotFound.vue'
 import Resources from '../views/Resources.vue'
 import Article from '../views/Article.vue'
+import ArticleDetail from '../views/ArticleDetail.vue'
 
 const routes : RouteRecordRaw[] = [
   {path: '/', redirect: '/home'},
@@ -15,6 +16,7 @@ const routes : RouteRecordRaw[] = [
   { path: '/project', name: 'Project', component: Project },
   { path: '/resources', name: 'Resources', component: Resources },
   { path: '/articles', name: 'Articles', component: Article },
+  { path: '/articles/:slug', name: 'ArticleDetail', component: ArticleDetail, props: true },
   { path: '/contact', name: 'Contact', component: Contact },
   { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound }
 ]

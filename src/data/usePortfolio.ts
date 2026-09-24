@@ -1,3 +1,14 @@
+import type { Article, ArticleCategory } from "../models/article";
+import { body as angularSignalsBody } from "./articles/angular-signals";
+import { body as standaloneComponentsBody } from "./articles/standalone-components";
+import { body as angularToVueBody } from "./articles/angular-to-vue";
+import { body as compositionApiPatternsBody } from "./articles/composition-api-patterns";
+import { body as typescriptUtilityTypesBody } from "./articles/typescript-utility-types";
+import { body as rxjsLessBody } from "./articles/rxjs-less";
+import { body as portfolioThatGetsReadBody } from "./articles/portfolio-that-gets-read";
+import { body as firstRestApiBody } from "./articles/first-rest-api";
+import { body as mentoringJuniorsBody } from "./articles/mentoring-juniors";
+import { body as promptingIsASkillBody } from "./articles/prompting-is-a-skill";
 import type { ContactInfo } from "../models/contact-information";
 import type { ExperienceTimeLine } from "../models/experience-time-line";
 import type { Project } from "../models/project";
@@ -389,3 +400,141 @@ export const resources: Resource[] = [
     tags: ['AI', 'Machine Learning', 'Engineering'],
   },
 ];
+
+export const articleCategories: ArticleCategory[] = [
+  { name: 'Angular', color: '#f12962', icon: 'pi-bolt' },
+  { name: 'Vue', color: '#0ec968', icon: 'pi-box' },
+  { name: 'Frontend', color: '#3665ea', icon: 'pi-desktop' },
+  { name: 'Backend', color: '#5b80f1', icon: 'pi-server' },
+  { name: 'AI', color: '#984bd0', icon: 'pi-sparkles' },
+  { name: 'Career', color: '#d4930a', icon: 'pi-briefcase' },
+];
+
+export const articles: Article[] = [
+  {
+    id: 1,
+    slug: 'angular-signals',
+    title: 'Angular Signals: Rethinking State in Your Components',
+    summary:
+      'Signals replaced a lot of the RxJS I used to write by reflex. Here is how I decide between a signal, a computed and an observable now that all three are on the table.',
+    category: 'Angular',
+    tags: ['Angular', 'Signals', 'State Management'],
+    date: 'Mar 2026',
+    readTime: '9 min read',
+    body: angularSignalsBody,
+    featured: true,
+  },
+  {
+    id: 2,
+    slug: 'standalone-components',
+    title: 'Standalone Components Changed How I Structure Angular Apps',
+    summary:
+      'Dropping NgModules meant my folder structure stopped mirroring the framework and started mirroring the feature. A walkthrough of the layout I landed on.',
+    category: 'Angular',
+    tags: ['Angular', 'Architecture', 'Standalone'],
+    date: 'Feb 2026',
+    readTime: '7 min read',
+    body: standaloneComponentsBody,
+  },
+  {
+    id: 3,
+    slug: 'angular-to-vue',
+    title: 'From Angular to Vue: What I Had to Unlearn',
+    summary:
+      'Two years of Angular habits did not transfer cleanly. Dependency injection, templates and reactivity all behaved differently — and three of my instincts were actively wrong.',
+    category: 'Vue',
+    tags: ['Vue', 'Angular', 'Learning'],
+    date: 'Jan 2026',
+    readTime: '6 min read',
+    body: angularToVueBody,
+  },
+  {
+    id: 4,
+    slug: 'composition-api-patterns',
+    title: 'Composition API Patterns I Reach For Every Day',
+    summary:
+      'Composables are the whole point of the Composition API, but the good ones follow a shape. State ownership, return values and cleanup — with the patterns I keep reusing.',
+    category: 'Vue',
+    tags: ['Vue', 'Composition API', 'Patterns'],
+    date: 'Dec 2025',
+    readTime: '8 min read',
+    body: compositionApiPatternsBody,
+  },
+  {
+    id: 5,
+    slug: 'typescript-utility-types',
+    title: 'TypeScript Utility Types That Replaced My Helper Functions',
+    summary:
+      'Partial, Pick, Omit, Record and a handful of others quietly deleted a folder of hand-written helpers. A look at which ones earned their place and which did not.',
+    category: 'Frontend',
+    tags: ['TypeScript', 'Types', 'Refactoring'],
+    date: 'Nov 2025',
+    readTime: '5 min read',
+    body: typescriptUtilityTypesBody,
+  },
+  {
+    id: 6,
+    slug: 'rxjs-less',
+    title: 'Why I Stopped Fearing RxJS (And Started Using Less of It)',
+    summary:
+      'The way I got comfortable with observables was learning when not to reach for them. Operators I actually use, and the places a plain promise reads better.',
+    category: 'Angular',
+    tags: ['Angular', 'RxJS', 'Reactivity'],
+    date: 'Oct 2025',
+    readTime: '10 min read',
+    body: rxjsLessBody,
+  },
+  {
+    id: 7,
+    slug: 'portfolio-that-gets-read',
+    title: 'Designing a Portfolio That Actually Gets Read',
+    summary:
+      'Most developer portfolios are a wall of skills bars. Spacing, hierarchy and restraint did more for mine than any animation — here is what I cut and why.',
+    category: 'Frontend',
+    tags: ['Design', 'UI', 'Portfolio'],
+    date: 'Sep 2025',
+    readTime: '6 min read',
+    body: portfolioThatGetsReadBody,
+  },
+  {
+    id: 8,
+    slug: 'first-rest-api',
+    title: 'Building My First REST API with Express and MongoDB',
+    summary:
+      'Coming from the frontend, the backend was a black box. Routing, models, validation and the mistakes I made wiring my first controller to a real database.',
+    category: 'Backend',
+    tags: ['Node.js', 'Express', 'MongoDB'],
+    date: 'Aug 2025',
+    readTime: '11 min read',
+    body: firstRestApiBody,
+  },
+  {
+    id: 9,
+    slug: 'mentoring-juniors',
+    title: 'What Mentoring Juniors Taught Me About My Own Code',
+    summary:
+      'Explaining a decision out loud is the fastest way to find out it was not a decision at all. On naming, review culture and writing code that argues for itself.',
+    category: 'Career',
+    tags: ['Career', 'Mentoring', 'Code Review'],
+    date: 'Jul 2025',
+    readTime: '4 min read',
+    body: mentoringJuniorsBody,
+  },
+  {
+    id: 10,
+    slug: 'prompting-is-a-skill',
+    title: 'Prompting Is a Skill: Using LLMs Without Outsourcing My Thinking',
+    summary:
+      'AI tools are genuinely useful and genuinely good at making me lazy. How I keep the model as a rubber duck instead of an answer machine, and where I draw the line.',
+    category: 'AI',
+    tags: ['AI', 'LLM', 'Prompting'],
+    date: 'Jun 2025',
+    readTime: '7 min read',
+    body: promptingIsASkillBody,
+    featured: true,
+  },
+];
+
+/** Look up an article by its URL slug. */
+export const findArticleBySlug = (slug: string): Article | undefined =>
+  articles.find((article) => article.slug === slug);
