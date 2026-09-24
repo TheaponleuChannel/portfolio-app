@@ -12,7 +12,7 @@
 <script setup lang="ts">
     import Avatar from 'primevue/avatar';
     import { RouterLink } from 'vue-router';
-    import pfImg from '../../assets/photo/pf.jpg';
+    import pfImg from '../../assets/photo/my-profile.png';
 
     defineProps({
         isFooter: {
