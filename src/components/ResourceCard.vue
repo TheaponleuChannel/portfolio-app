@@ -13,6 +13,10 @@ const badgeStyle = computed(() => ({
   backgroundColor: props.category.color + '1A',
   border: `1px solid ${props.category.color}40`,
 }));
+
+const MAX_TAGS = 3;
+const visibleTags = computed(() => props.resource.tags?.slice(0, MAX_TAGS) ?? []);
+const extraTagCount = computed(() => Math.max((props.resource.tags?.length ?? 0) - MAX_TAGS, 0));
 </script>
 
 <template>
@@ -48,7 +52,8 @@ const badgeStyle = computed(() => ({
       <p class="resource-desc">{{ resource.description }}</p>
 
       <div v-if="resource.tags?.length" class="resource-tags">
-        <span v-for="tag in resource.tags" :key="tag" class="resource-tag">{{ tag }}</span>
+        <span v-for="tag in visibleTags" :key="tag" class="resource-tag">{{ tag }}</span>
+        <span v-if="extraTagCount" class="resource-tag resource-tag--more">+{{ extraTagCount }}</span>
       </div>
 
       <div class="resource-footer">
@@ -207,13 +212,15 @@ const badgeStyle = computed(() => ({
 }
 
 .resource-tag {
-  padding: 0.2rem 0.55rem;
-  border-radius: 0.375rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
   font-size: 0.7rem;
   font-weight: 500;
+  line-height: 1.4;
   background-color: rgba(99, 102, 241, 0.08);
   color: #6366f1;
   border: 1px solid rgba(99, 102, 241, 0.15);
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .my-app-dark .resource-tag {
@@ -222,13 +229,28 @@ const badgeStyle = computed(() => ({
   border-color: rgba(99, 102, 241, 0.2);
 }
 
+.resource-tag--more {
+  border-style: dashed;
+}
+
+.resource-card:hover .resource-tag:not(.resource-tag--more) {
+  color: v-bind('category.color');
+  background-color: v-bind('category.color + "14"');
+  border-color: v-bind('category.color + "40"');
+}
+
 .resource-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
   margin-top: auto;
-  padding-top: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.my-app-dark .resource-footer {
+  border-top-color: rgba(255, 255, 255, 0.08);
 }
 
 .resource-meta {
@@ -253,5 +275,31 @@ const badgeStyle = computed(() => ({
 
 .resource-card:hover .resource-more .pi {
   transform: translateX(4px);
+}
+
+/* ---------- Small-screen polish ---------- */
+@media (max-width: 639px) {
+  .resource-body {
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+
+  .resource-title {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .resource-desc {
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+
+  .resource-footer {
+    flex-wrap: wrap;
+    row-gap: 0.25rem;
+  }
 }
 </style>

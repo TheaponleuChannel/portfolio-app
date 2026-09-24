@@ -20,6 +20,10 @@ const badgeStyle = computed(() => ({
 }));
 
 const indexLabel = computed(() => String(props.index).padStart(2, '0'));
+
+const MAX_TAGS = 3;
+const visibleTags = computed(() => props.resource.tags?.slice(0, MAX_TAGS) ?? []);
+const extraTagCount = computed(() => Math.max((props.resource.tags?.length ?? 0) - MAX_TAGS, 0));
 </script>
 
 <template>
@@ -59,7 +63,8 @@ const indexLabel = computed(() => String(props.index).padStart(2, '0'));
       <p class="mag-desc">{{ resource.description }}</p>
 
       <div v-if="resource.tags?.length" class="mag-tags">
-        <span v-for="tag in resource.tags" :key="tag" class="mag-tag">{{ tag }}</span>
+        <span v-for="tag in visibleTags" :key="tag" class="mag-tag">{{ tag }}</span>
+        <span v-if="extraTagCount" class="mag-tag mag-tag--more">+{{ extraTagCount }}</span>
       </div>
 
       <div class="mag-footer">
@@ -259,19 +264,31 @@ const indexLabel = computed(() => String(props.index).padStart(2, '0'));
 }
 
 .mag-tag {
-  padding: 0.22rem 0.6rem;
-  border-radius: 0.375rem;
-  font-size: 0.72rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
   font-weight: 500;
+  line-height: 1.4;
   background-color: rgba(99, 102, 241, 0.08);
   color: #6366f1;
   border: 1px solid rgba(99, 102, 241, 0.15);
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .my-app-dark .mag-tag {
   background-color: rgba(99, 102, 241, 0.12);
   color: #a5b4fc;
   border-color: rgba(99, 102, 241, 0.2);
+}
+
+.mag-tag--more {
+  border-style: dashed;
+}
+
+.mag:hover .mag-tag:not(.mag-tag--more) {
+  color: v-bind('category.color');
+  background-color: v-bind('category.color + "14"');
+  border-color: v-bind('category.color + "40"');
 }
 
 .mag-footer {
@@ -304,5 +321,52 @@ const indexLabel = computed(() => String(props.index).padStart(2, '0'));
 
 .mag:hover .mag-more .pi {
   transform: translateX(5px);
+}
+
+/* ---------- Small-screen polish ---------- */
+@media (max-width: 639px) {
+  .mag-body {
+    padding: 1.15rem 1rem;
+    gap: 0.55rem;
+  }
+
+  .mag-title {
+    font-size: 1.15rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .mag-desc {
+    font-size: 0.85rem;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+
+  .mag-cover {
+    min-height: 150px;
+  }
+
+  .mag-index {
+    font-size: 1.9rem;
+  }
+
+  .mag-meta-top,
+  .mag-footer {
+    flex-wrap: wrap;
+    row-gap: 0.3rem;
+  }
+
+  .mag-footer {
+    margin-top: 0.15rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .my-app-dark .mag-footer {
+    border-top-color: rgba(255, 255, 255, 0.06);
+  }
 }
 </style>
